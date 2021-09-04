@@ -1,6 +1,16 @@
-.app_container {
-  max-width: 1200px;
-  background-color: whitesmoke;
-  margin: 0 auto;
-  height: 100vh;
+.container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 25px;
+  padding: 10px;
+}
+
+.hd__images {
+  height: 250px;
+}
+
+.image__container {
+  margin-left: 20px;
 }
