@@ -8,9 +8,7 @@ const App = () => {
   const [data, SetData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const mov = await axios.get(
-        "https://api.themoviedb.org/3/trending/all/week?api_key=2bd100e4b555afbe68970b0f50bd5285&language=en-US"
-      );
+      const mov = await axios.get("");
 
       SetData(mov.data.results);
     };
