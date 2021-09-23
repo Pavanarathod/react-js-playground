@@ -1,27 +1,72 @@
-import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Notes from "./pages/MUI/Notes";
-import Create from "./pages/MUI/Create";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import {
+  Typography,
+  AppBar,
+  Card,
+  CardContent,
+  CardAction,
+  CardMedia,
+  CssBaseline,
+  Toolbar,
+  Container,
+  ButtonGroup,
+  Button,
+  Grid,
+} from "@material-ui/core";
+import { PhotoCamera } from "@material-ui/icons";
 
-const theam = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#fefefe",
-    },
-  },
-});
+import useStyles from "./styles/styles";
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <ThemeProvider theme={theam}>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={Notes} exact />
-          <Route path="/create" component={Create} exact />
-        </Switch>
-      </BrowserRouter>
-    </ThemeProvider>
+    <>
+      <CssBaseline>
+        <AppBar position="relative">
+          <Toolbar>
+            <PhotoCamera />
+            <Typography variant="h6">Photo Album</Typography>
+          </Toolbar>
+        </AppBar>
+        <main>
+          <div>
+            <Container maxWidth="sm" className={classes.container}>
+              <Typography
+                variant="h2"
+                align="center"
+                color="textPrimary"
+                gutterBottom
+              >
+                Photo Album
+              </Typography>
+              <Typography
+                variant="h5"
+                align="center"
+                color="textPrimary"
+                paragraph
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
+                beatae et ad fugiat nulla corporis optio rem deserunt iste
+                tenetur.
+              </Typography>
+              <div>
+                <Grid container spaceing={2} justify="center">
+                  <Grid item>
+                    <Button variant="contained" color="primary">
+                      See My Photos
+                    </Button>
+                  </Grid>
+                  <Grid item>
+                    <Button variant="outlined" color="primary">
+                      See My Photos
+                    </Button>
+                  </Grid>
+                </Grid>
+              </div>
+            </Container>
+          </div>
+        </main>
+      </CssBaseline>
+    </>
   );
 };
 
