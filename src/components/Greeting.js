@@ -1,9 +1,7 @@
+import React from "react";
+
 const Greeting = () => {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  );
+  return <div className="bg-green-400 h-screen">one</div>;
 };
 
 export default Greeting;
